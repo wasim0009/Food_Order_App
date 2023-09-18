@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MdShoppingBasket, MdAdd, MdLogout } from "react-icons/md";
 // import { GoPersonAdd,LuLogOut } from 'react-icons/fa6';
-import Logo from "./img/chickenbhai1.png";
+import Logo from "./img/luffy.png";
 import { app } from "../firebase.config";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import Avatar from "./img/avatar.png";
@@ -46,8 +46,8 @@ const Header = () => {
             initial={{ opacity: 0, y: -200 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -200 }}
+            className="rounded-sl  object-cover w-15 h-12 font-bold "
             src={Logo}
-            className="object-cover w-15 h-12 font-bold"
             alt="logo"
           />
           <motion.p
@@ -104,9 +104,9 @@ const Header = () => {
             />
             {isMenu && (
               <motion.div
-              initial={{ opacity: 0, y: -200 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -200 }}
+                initial={{ opacity: 0, y: -200 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -200 }}
                 className="w-40 bg-gray-50 shadow-xl rounded-lg flex flex-col absolute top-8 right-5 px-4 py-2 "
               >
                 {user && user.email === "mr.wasim006@gmail.com" && (
@@ -131,6 +131,17 @@ const Header = () => {
 
       {/* mobile  */}
       <div className="md:hidden w-full h-full  flex items-center justify-between">
+        <motion.div
+          initial={{ opacity: 0, y: -200 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -200 }}
+          className="relative flex items-center justify-center "
+        >
+          <MdShoppingBasket className="text-textColor text-2xl cursor-pointer" />
+          <div className="absolute -top-2 -right-3 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify center">
+            <p className="text-xs text-white font-semibold ml-1.5">2</p>
+          </div>
+        </motion.div>
         <Link to={"/"} className="flex item-center gap-2">
           <motion.img
             initial={{ opacity: 0, y: -200 }}
