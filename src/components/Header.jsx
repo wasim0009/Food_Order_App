@@ -38,7 +38,7 @@ const Header = () => {
     });
   };
   return (
-    <header className="fixed z-50 w-screen p-3 px-4 md:pd-6 md:px-16">
+    <header className="fixed z-50 w-screen p-3 px-4 md:pd-6 md:px-16 bg-primary">
       {/* desktop or tablet */}
       <div className="hidden md:flex w-full h-full items-center justify-between">
         <Link to={"/"} className="flex item-center gap-2">
@@ -130,7 +130,7 @@ const Header = () => {
       </div>
 
       {/* mobile  */}
-      <div className="md:hidden w-full h-full  flex items-center justify-between">
+      <div className="md:hidden w-full h-full  flex items-center justify-between bg-primary">
         <motion.div
           initial={{ opacity: 0, y: -200 }}
           animate={{ opacity: 1, y: 0 }}
