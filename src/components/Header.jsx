@@ -4,7 +4,7 @@ import { MdShoppingBasket, MdAdd, MdLogout } from "react-icons/md";
 import Logo from "./img/luffy.png";
 import { app } from "../firebase.config";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import Avatar from "./img/avatar.png";
+import Avatar from "./img/avatar.png";  
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../context/StateProvider";
@@ -59,23 +59,23 @@ const Header = () => {
             City
           </motion.p>
         </Link>
-        <div className="flex items-center gap-8 ml-auto">
+        <div className="flex items-center justify-center gap-8 ml-auto">
           <motion.ul
             initial={{ opacity: 0, y: -200 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -200 }}
             className="flex items-center gap-8"
           >
-            <li className="text-base transition-all text-textcolor hover:text-headingColor duration-100 ease-in-out cursor-pointer">
+            <li className="text-base transition-all text-lighttextGray   hover:text-headingColor duration-100 ease-in-out cursor-pointer p-4"onClick={()=>setIsMenu(false)}>
               Home
             </li>
-            <li className="text-base transition-all text-textcolor hover:text-headingColor duration-100 ease-in-out cursor-pointer">
+            <li className="text-base transition-all text-lighttextGray hover:text-headingColor duration-100 ease-in-out cursor-pointer p-4"onClick={()=>setIsMenu(false)}>
               Menu
             </li>
-            <li className="text-base transition-all text-textcolor hover:text-headingColor duration-100 ease-in-out cursor-pointer">
+            <li className="text-base transition-all text-lighttextGray hover:text-headingColor duration-100 ease-in-out cursor-pointer p-4"onClick={()=>setIsMenu(false)}>
               About Us
             </li>
-            <li className="text-base transition-all text-textcolor hover:text-headingColor duration-100 ease-in-out cursor-pointer">
+            <li className="text-base transition-all text-lighttextGray hover:text-headingColor duration-100 ease-in-out cursor-pointer p-4"onClick={()=>setIsMenu(false)}>
               Service
             </li>
           </motion.ul>
@@ -111,7 +111,10 @@ const Header = () => {
               >
                 {user && user.email === "mr.wasim006@gmail.com" && (
                   <Link to={"/createItem"}>
-                    <p className="px-2 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-400 duration-100 ease-in-out text-textColor  text-base">
+                    <p
+                      className="px-2 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-400 duration-100 ease-in-out text-textColor  text-base"
+                      onClick={() => setIsMenu(false)}
+                    >
                       New Items <MdAdd />
                     </p>
                   </Link>
@@ -188,16 +191,28 @@ const Header = () => {
                 exit={{ opacity: 0, y: -200 }}
                 className="flex flex-col px-2 py-2 gap-5"
               >
-                <li className="text-base transition-all text-textcolor hover:text-headingColor duration-100 ease-in-out cursor-pointer">
+                <li
+                  className="text-base transition-all text-textcolor hover:text-headingColor duration-100 ease-in-out cursor-pointer"
+                  onClick={() => setIsMenu(false)}
+                >
                   Home
                 </li>
-                <li className="text-base transition-all text-textcolor hover:text-headingColor duration-100 ease-in-out cursor-pointer">
+                <li
+                  className="text-base transition-all text-textcolor hover:text-headingColor duration-100 ease-in-out cursor-pointer"
+                  onClick={() => setIsMenu(false)}
+                >
                   Menu
                 </li>
-                <li className="text-base transition-all text-textcolor hover:text-headingColor duration-100 ease-in-out cursor-pointer">
+                <li
+                  className="text-base transition-all text-textcolor hover:text-headingColor duration-100 ease-in-out cursor-pointer"
+                  onClick={() => setIsMenu(false)}
+                >
                   About Us
                 </li>
-                <li className="text-base transition-all text-textcolor hover:text-headingColor duration-100 ease-in-out cursor-pointer">
+                <li
+                  className="text-base transition-all text-textcolor hover:text-headingColor duration-100 ease-in-out cursor-pointer"
+                  onClick={() => setIsMenu(false)}
+                >
                   Service
                 </li>
               </motion.ul>

@@ -50,7 +50,7 @@ const HomeComponent = () => {
           {heroData &&
             heroData.map((n) => (
               <div
-                key={n.id}
+                key={n.id} 
                 className="lg:w-190 p-4 bg-cardOverlay backdrop:blur-md flex flex-col items-center justify-center  rounded-3xl "
               >
                 <img
