@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { MdFastfood } from "react-icons/md";
 import { categories } from "../utils/data";
 import { motion } from "framer-motion";
+import RowContainer from "../components/RowContainer";
+import { useStateValue } from "../context/StateProvider";
 
 const MenuContainer = () => {
   const [filter, setfilter] = useState(null);
-
+  const [{ foodItems }, dispatch] = useStateValue();
   useEffect(() => {}, [filter]);
   return (
     <section className=" w-full my-6" id="menu">
@@ -50,6 +52,12 @@ const MenuContainer = () => {
                 </p>
               </motion.div>
             ))}
+        </div>
+        <div className="w-full ">
+          <RowContainer
+            flag={false}
+            data={foodItems?.filter((n) => n.category === filter)}
+          />
         </div>
       </div>
     </section>
