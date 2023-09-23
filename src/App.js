@@ -4,6 +4,7 @@ import {
   MainConductor,
   CreateContainer,
   HomeContainer,
+  CartContainer
 } from "./components";
 import { Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/*" element={<MainConductor />} />
             <Route path="/createitem" element={<CreateContainer />} />
             <Route path="/*" element={<HomeContainer />} />
+           
           </Routes>
         </main>
       </div>

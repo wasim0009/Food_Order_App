@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import Delivery from "../components/img/delivery.png";
 // import HomeComponent from "./HomeContainer";
-import { HomeContainer, RowContainer ,MenuContainer} from ".";
+import { HomeContainer, RowContainer ,MenuContainer,CartContainer} from ".";
 // import { Route, Routes } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MdChevronRight, MdChevronLeft } from "react-icons/md";
@@ -46,7 +46,7 @@ const MainConductor = () => {
       </section>
 
       <MenuContainer />
-
+<CartContainer/>
       {/* {cartShow && <CartContainer />} */}
     </div>
   );
