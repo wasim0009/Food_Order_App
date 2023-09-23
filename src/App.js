@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import {
   Header,
-  MainConductor,
+  MainContainer,
   CreateContainer,
   HomeContainer,
   CartContainer
@@ -10,7 +10,7 @@ import { Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useStateValue } from "./context/StateProvider";
 import { getAllFoodItems } from "./utils/firebaseFunctions";
-import { actionType } from "./context/Reducer";
+import { actionType } from "./context/reducer";
 const App = () => {
   const [{}, dispatch] = useStateValue();
   const fetchData = async () => {
@@ -30,7 +30,7 @@ const App = () => {
         <Header />
         <main className=" mt-14 mt:md-20 px-4 md:px-16 py-4  w-full">
           <Routes>
-            <Route path="/*" element={<MainConductor />} />
+            <Route path="/*" element={<MainContainer />} />
             <Route path="/createitem" element={<CreateContainer />} />
             <Route path="/*" element={<HomeContainer />} />
            

@@ -6,20 +6,20 @@ import f1 from "../components/img/f1.png";
 export const heroData = [
   {
     id: 1,
-    name: "IceCream",
-    decp: "Chocalate & vanilla",
+    name: "𝕴𝖈𝖊𝕮𝖗𝖊𝖆𝖒",
+    decp: "ℭ𝔥𝔬𝔠𝔞𝔩𝔞𝔱𝔢 & 𝔳𝔞𝔫𝔦𝔩𝔩𝔞",
     price: "5.25",
     imgSrc: i4,
   },
   {
     id: 2,
-    name: "Chicken",
-    decp: "Fresh Chickens",
+    name: "𝕮𝖍𝖎𝖈𝖐𝖊𝖓",
+    decp: "𝔉𝔯𝔢𝔰𝔥 ℭ𝔥𝔦𝔠𝔨𝔢𝔫𝔰",
     price: "6.87",
     imgSrc: c3,
   },
-  { id: 3, name: "Fishes", decp: "Fresh Fishes", price: "7.89", imgSrc: fi1 },
-  { id: 4, name: "Fruits", decp: "Fresh Fruits", price: "3.56", imgSrc: f1 },
+  { id: 3, name: "𝕱𝖎𝖘𝖍𝖊𝖘", decp: "𝔉𝔯𝔢𝔰𝔥 𝔉𝔦𝔰𝔥𝔢𝔰", price: "7.89", imgSrc: fi1 },
+  { id: 4, name: "𝕱𝖗𝖚𝖎𝖙𝖘", decp: "𝔉𝔯𝔢𝔰𝔥 𝔉𝔯𝔲𝔦𝔱𝔰", price: "3.56", imgSrc: f1 },
 ];
 export const categories = [
   {
