@@ -13,7 +13,7 @@ import Loader from "./Loader";
 import {
   deleteObject,
   getDownloadURL,
-  
+
   ref,
   uploadBytesResumable,
 } from "firebase/storage";
@@ -157,11 +157,10 @@ const CreateContainer = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className={`w-full p-2 rounded-lg text-center text-lg font-semibold ${
-              alertStatus === "danger"
+            className={`w-full p-2 rounded-lg text-center text-lg font-semibold ${alertStatus === "danger"
                 ? "bg-red-400 text-red-800"
                 : "bg-emerald-400 text-emerald-800"
-            }`}
+              }`}
           >
             {msg}
           </motion.p>

@@ -19,9 +19,10 @@ import { app } from "../firebase.config";
 
 import Logo from "../components/img/luffy.png";
 import Avatar from "../components/img/avatar.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useStateValue } from "../context/StateProvider";
 import { actionType } from "../context/reducer";
+// import Contact from "./Contact";
 
 const Header = () => {
   const firebaseAuth = getAuth(app);
@@ -30,7 +31,7 @@ const Header = () => {
   const [{ user, cartShow, cartItems }, dispatch] = useStateValue();
 
   const [isMenu, setIsMenu] = useState(false);
-
+  const [isContact, setIsContact] = useState(false);
   const login = async () => {
     if (!user) {
       const {
@@ -63,6 +64,11 @@ const Header = () => {
     });
   };
 
+  // const getContactDetail = () => {
+  //   isContact(true);
+  //   <Contact />
+  // }
+
   return (
     <header className="fixed z-50 w-screen p-3 px-4 md:p-6 md:px-16 bg-primary">
       {/* desktop & tablet */}
@@ -79,18 +85,32 @@ const Header = () => {
             exit={{ opacity: 0, x: 200 }}
             className="flex items-center gap-24 "
           >
-            <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-            ℌ𝔬𝔪𝔢
-            </li>
-            <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-            𝔐𝔢𝔫𝔲
-            </li>
-            <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-            𝔄𝔟𝔬𝔲𝔱 𝔘𝔰
-            </li>
-            <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-            𝔖𝔢𝔯𝔳𝔦𝔠𝔢
-            </li>
+            <NavLink to={"/home"}>
+              {" "}
+              <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
+                ℌ𝔬𝔪𝔢
+              </li>
+            </NavLink>
+
+            <NavLink to={"/menu"}>
+              <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
+                𝔐𝔢𝔫𝔲
+              </li>
+            </NavLink>
+            <NavLink to={"/contact"}>
+              {" "}
+              <li
+                className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
+              //  onClick={getContactDetail}
+              >
+                𝔄𝔟𝔬𝔲𝔱 𝔘𝔰
+              </li>
+            </NavLink>
+            <NavLink to={"/service"}>
+              <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
+                𝔖𝔢𝔯𝔳𝔦𝔠𝔢
+              </li>
+            </NavLink>
           </motion.ul>
 
           <div
@@ -184,7 +204,7 @@ const Header = () => {
               {user && user.email === "vetrivel.galaxy@gmail.com" && (
                 <Link to={"/createItem"}>
                   <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base">
-                  𝔑𝔢𝔴 ℑ𝔱𝔢𝔪𝔰 <MdAdd />
+                    𝔑𝔢𝔴 ℑ𝔱𝔢𝔪𝔰 <MdAdd />
                   </p>
                 </Link>
               )}
@@ -202,18 +222,18 @@ const Header = () => {
                 >
                   𝔐𝔢𝔫𝔲
                 </li>
-                <li
+                {/* <li
                   className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                   onClick={() => setIsMenu(false)}
                 >
                   𝔄𝔟𝔬𝔲𝔱 𝔘𝔰
-                </li>
-                <li
+                </li> */}
+                {/* <li
                   className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                   onClick={() => setIsMenu(false)}
                 >
                   𝔖𝔢𝔯𝔳𝔦𝔠𝔢
-                </li>
+                </li> */}
               </ul>
 
               <p
