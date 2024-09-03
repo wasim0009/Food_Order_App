@@ -21,7 +21,7 @@ import Logo from "../components/img/luffy.png";
 import Avatar from "../components/img/avatar.png";
 import { Link, NavLink } from "react-router-dom";
 import { useStateValue } from "../context/StateProvider";
-import { actionType } from "../context/reducer";
+import { actionType } from "../context/Reducer";
 // import Contact from "./Contact";
 
 const Header = () => {
@@ -101,7 +101,7 @@ const Header = () => {
               {" "}
               <li
                 className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
-              //  onClick={getContactDetail}
+                //  onClick={getContactDetail}
               >
                 𝔄𝔟𝔬𝔲𝔱 𝔘𝔰
               </li>

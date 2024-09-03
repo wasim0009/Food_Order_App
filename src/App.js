@@ -9,16 +9,15 @@ import {
   MenuContainer,
   Service,
   Contactt,
-
 } from "./components";
 import { Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useStateValue } from "./context/StateProvider";
 import { getAllFoodItems } from "./utils/firebaseFunctions";
-import { actionType } from "./context/reducer";
+import { actionType } from "./context/Reducer";
 
 const App = () => {
-  const [{ }, dispatch] = useStateValue();
+  const [{}, dispatch] = useStateValue();
 
   const fetchData = async () => {
     await getAllFoodItems().then((data) => {
@@ -31,7 +30,6 @@ const App = () => {
   useEffect(() => {
     fetchData();
   }, []);
-
 
   return (
     <AnimatePresence>
@@ -51,13 +49,9 @@ const App = () => {
             <Route path="/service" element={<Service />} />
             <Route path="/info" element={<Contactt />} />
           </Routes>
-
         </main>
-
-
-
       </div>
-    </AnimatePresence >
+    </AnimatePresence>
   );
 };
 

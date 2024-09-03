@@ -4,39 +4,34 @@ import { RiRefreshFill } from "react-icons/ri";
 
 import { motion } from "framer-motion";
 import { useStateValue } from "../context/StateProvider";
-import { actionType } from "../context/reducer";
+import { actionType } from "../context/Reducer";
 import EmptyCart from "../components/img/emptyCart.svg";
 import CartItem from "./CartItem";
 
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 
 import Swal from "sweetalert2";
 
 let handleFunction = () => {
   Swal.fire({
-    title: 'Are you sure?',
+    title: "Are you sure?",
     text: "Wait for the call back",
-    icon: 'warning',
+    icon: "warning",
     showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, Send it!'
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, Send it!",
   }).then((result) => {
     if (result.isConfirmed) {
-      Swal.fire(
-        'Sent',
-        'Your Order has been Ordered.',
-        'success'
-      )
+      Swal.fire("Sent", "Your Order has been Ordered.", "success");
     }
-  })
-}
+  });
+};
 const CartContainer = () => {
   const [{ cartShow, cartItems, user }, dispatch] = useStateValue();
   const [flag, setFlag] = useState(1);
   const [tot, setTot] = useState(0);
-
 
   const showCart = () => {
     dispatch({
@@ -62,31 +57,32 @@ const CartContainer = () => {
     localStorage.setItem("cartItems", JSON.stringify([]));
   };
 
-
   const form = useRef();
   const sendEmail = (Totalprice, cartItems) => {
     handleFunction();
     const templateParams = {
-      to_email: 'Asif009@gmail.com',
-      customVariable: 'This is a custom value',
+      to_email: "Asif009@gmail.com",
+      customVariable: "This is a custom value",
       TotalPrice: Totalprice,
-      CartItems: cartItems[0].id
+      CartItems: cartItems[0].id,
     };
 
-    emailjs.send('service_6z1sran', 'template_extttch', templateParams, '8_JvmAq8Y6llvBhZG')
+    emailjs
+      .send(
+        "service_6z1sran",
+        "template_extttch",
+        templateParams,
+        "8_JvmAq8Y6llvBhZG"
+      )
       .then((response) => {
-        console.log('Email sent successfully:', response);
+        console.log("Email sent successfully:", response);
       })
       .catch((error) => {
-        console.error('Email sending failed:', error);
+        console.error("Email sending failed:", error);
       });
 
     // alert("Thank you for ordering")
-
-  }
-
-
-
+  };
 
   return (
     <motion.div
@@ -151,15 +147,12 @@ const CartContainer = () => {
             {user ? (
               <motion.button
                 onClick={() => sendEmail(tot, cartItems)}
-
                 whileTap={{ scale: 0.8 }}
                 type="button"
                 className="w-full p-2 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 text-gray-50 text-lg my-2 hover:shadow-lg"
-
               >
                 Check Out
               </motion.button>
-
             ) : (
               <motion.button
                 whileTap={{ scale: 0.8 }}

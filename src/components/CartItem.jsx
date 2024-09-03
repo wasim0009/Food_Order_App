@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { BiMinus, BiPlus } from "react-icons/bi";
 import { motion } from "framer-motion";
 import { useStateValue } from "../context/StateProvider";
-import { actionType } from "../context/reducer";
-import { fetchCart } from "../utils/fetchLocalData.js";
+import { actionType } from "../context/Reducer";
+//import { fetchCart } from "../utils/Reducer.js";
 let items = [];
 
 const CartItem = ({ item, setFlag, flag }) => {
@@ -48,7 +48,7 @@ const CartItem = ({ item, setFlag, flag }) => {
   };
 
   useEffect(() => {
-    items = cartItems; 
+    items = cartItems;
   }, [qty, items]);
 
   return (

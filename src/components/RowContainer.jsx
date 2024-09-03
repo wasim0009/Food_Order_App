@@ -3,16 +3,16 @@ import { MdShoppingBasket } from "react-icons/md";
 import { motion } from "framer-motion";
 import NotFound from "../components/img/NotFound.svg";
 import { useStateValue } from "../context/StateProvider";
-import { actionType } from "../context/reducer";
+import { actionType } from "../context/Reducer";
 
 const RowContainer = ({ flag, data, scrollValue }) => {
   const rowContainer = useRef();
 
   const [items, setItems] = useState([]);
 
-  const [{ cartItems },dispatch] = useStateValue();
+  const [{ cartItems }, dispatch] = useStateValue();
 
-  const addtocart = () => { 
+  const addtocart = () => {
     dispatch({
       type: actionType.SET_CARTITEMS,
       cartItems: items,
